@@ -1,0 +1,59 @@
+{% extends "layout2.html"%}
+
+{%block content%}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="form-horizontal" name="form1" action="/resultado" method="post">
+                <div class="control-group">
+                    <label for="txtNombre" class="control-label">Nombre: </label>
+                    <div class="controls">
+                        <input type="text" name="txtNombre" placeholder="Nombre" value="">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="txtCantidadCom" class="control-label">Cantidad Compradores: </label>
+                    <div class="controls">
+                        <input type="text" name="txtCantidadCom" placeholder="Cantidad" value="">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="btnTarjeta" class="control-label">Tarjeta Cineco: </label>
+                    <div class="controls">
+                        <div>
+                            <input type="radio" name="btnTarjeta" value="1">
+                            <label for="i">Si</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="btnTarjeta" value="0">
+                            <label for="i">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="txtCantidadBol" class="control-label">Cantidad de Boletos: </label>
+                    <div class="controls">
+                        <input type="text" name="txtCantidadBol" placeholder="Cantidad" value="">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-default btn-primary">
+                            <i class="icon-ok icon-white"></i> Procesar
+                        </button><br><br>
+                        <button type="submit" class="btn btn-default btn-primary">
+                            <i class="icon-home icon-white"></i> Salir
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}

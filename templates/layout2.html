@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <title>Cinepolis</title>
+    <style>
+        body{
+            padding-top: 60px;
+        }
+        .tr-head{background: #dff0d8;}
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
+</head>
+<body style="background-color: rgb(255, 255, 255);">
+    <div class="navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container text-center">
+                <a class="brand" href="">
+                    Cinepolis
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="position: sticky;">
+        <div class="row">
+            <div class="col">
+                {%block content%}
+                  
+                {%endblock%}
+            </div>
+            <div class="col">
+                <img src="../static/img/cinepolis.png" style="background-position: center; background-repeat: no-repeat;">
+            </div>
+        </div>   
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+{%block content%}
+<h1>La suma es: {{suma}}</h1>
+<h1>El numero mas grande de la lista es: {{numMax}}</h1>
+<h1>El nuero mas pequeño de la lista es: {{numMin}}</h1>
+<h1>El promedio es: {{promedio}}</h1>
+{%for i in range(num) :%}
+    <h1>{{lista1[i]}}</h1>
+{%endfor%}
+{%if num==0 :%}
+    <h1>No se repiten los numeros.</h1>
+{%endif%}
+{%endblock%}
