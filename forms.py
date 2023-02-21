@@ -6,9 +6,13 @@ from wtforms import validators
 
 class UserForm(Form):
     
-    matricula = StringField('Matricula', [validators.DataRequired(message= 'La matricula es requerida')])
-    nombre = StringField('Nombre')
+    matricula = StringField('Matricula',[
+        validators.DataRequired(message= 'La matricula es requerida')])
+    nombre = StringField('Nombre',[
+        validators.DataRequired(message= 'El nombre es requerido'),
+        validators.length(min=15, message='Ingresa un valor maximo')])
     apaterno = StringField('Apaterno')
     amaterno = StringField('Amaterno')
-    email = EmailField('Correo')
+    email = EmailField('Correo',[
+        validators.DataRequired(message= 'Ingresa un valor maximo')])
     

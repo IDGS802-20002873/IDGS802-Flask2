@@ -1,0 +1,35 @@
+{% extends "layout.html"%}
+
+{%block content%}
+<div class="col-xs-6">
+    {%from "_macros.html" import render_field %}
+    <form name="form1" action="" method="post" novalidate>
+        <div class="form-group">
+            {{render_field(form.spanish)}}
+        </div>
+        <div>
+            {{render_field(form.english)}}
+        </div>
+        <input type='submit' value='Guardar'>
+    </form>
+</div>
+<div class="col-xs-6">
+    <h1>Buscar</h1>
+    {{render_field(form.search)}
+    <br>
+    <form name="form2" action="" method="post"></form>
+    <div class="control-group">
+        <label for="btnIdioma" class="control-label">Idioma: </label>
+        <div class="controls">
+            <div>
+                <input type="radio" name="btnTarjeta" value="1">
+                <label for="i">Español</label>
+            </div>
+            <div>
+                <input type="radio" name="btnTarjeta" value="0">
+                <label for="i">Ingles</label>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

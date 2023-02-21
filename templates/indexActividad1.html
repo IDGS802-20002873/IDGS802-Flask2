@@ -8,7 +8,7 @@
                 <div class="from-group">
                     {{render_num(form.numero)}}
                 </div>
-                <input class="btn btn-success" type="submit" value="Imprimir">
+                <input class="btn btn-info" type="submit" value="Imprimir">
             </form>
         </div>
         {%if num>0:%}
@@ -19,7 +19,9 @@
                 </div>
                 {% from "_macros.html" import render_input %}
                 {% for i in range(num) %}
-                {{render_input("numero{}".format((i+1)),"Numero{}".format((i+1)),type="number")}}
+
+                {{render_input("Numero {}".format((i+1)),"Numero{}".format((i+1)),type="number")}}
+                
                 {% endfor %}
                 <input class="btn btn-outline-info" type="submit" value="Calcular">
             </form>

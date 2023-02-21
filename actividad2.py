@@ -1,17 +1,19 @@
 from flask import Flask,render_template
 from flask import request
-import formsActividad
+import formsAct2
 
 app=Flask(__name__)
 
 @app.route("/",methods=["GET","POST"])
 def Index():
-    num_form = formsActividad.UserForm(request.form)
-    num = 0
-    if request.method=='POST':
-        num = num_form.numero.data
-        num = int(num)
-    return render_template("indexActividad1.html",form=num_form,num=num)
+    len_form = formsActividad.LenguajeForm(request.form)
+    val_S = ''
+    val_I = ''
+    if request.method=='POST' and len_form.validate():
+        val_S = len_form.spanish.data
+        val_I = len_form.english.data
+    
+    return render_template("formularioAct2.html",form=num_form,num=num)
         
 
 @app.route("/resultado",methods=["POST"])
