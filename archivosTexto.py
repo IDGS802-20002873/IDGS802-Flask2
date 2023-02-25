@@ -66,21 +66,19 @@ f1.close()
 #f.write('\nMario')
 #f.write('\nPedro')
 #f.close()
-palabra = 'Red'
-word = 'Rojo'
+palabra = 'RED'
+word = 'ROJO'
 resultado = True
 lista = []
 f=open('colores.txt', 'r')
 color = f.readline()
 colorDict = eval(color)
 resultado = colorDict[palabra]
+print(resultado)
 for i in colorDict.values():
     lista.append(i)
 if word in lista:
     print('El color existe')
 f.close()
 
-if resultado == 'Rojo':
-    print('El color existe')
-else:
-    print('El color no existe')
+

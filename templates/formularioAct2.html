@@ -3,36 +3,36 @@
 {%block content%}
 <div class="col-xs-6">
     {%from "_macros.html" import render_field %}
-    <form action="/" method="post" novalidate>
+    <form action="/guardar" method="post" novalidate>
         <div class="form-group">
             {{render_field(form.spanish)}}
         </div>
         <div>
             {{render_field(form.english)}}
         </div>
-        <br>
         <div>
-            <h5>{{val_S}}</h5>
+            <h4>{{res}}</h4>
         </div>
+        <br>
         <input type='submit' value='Guardar'>
     </form>
 </div>
 <div class="col-xs-6">
-    {{render_field(form.search)}}
-    <br>
     <form action="/resultado" method="post">
+        <div>
+            {{render_field(form.search)}}
+        </div>
     <div class="control-group">
         <label for="btnIdioma" class="control-label">Idioma: </label>
         <div class="controls">
-            <div class="">
-                <input type="radio" name="btnOpcion" value="1">
-                <label for="i">Español</label>
+            <div class="form-group">
+                <label for="i" >Español <input type="radio" name="btnOpcion" value="1" style="margin-left: 10px;"></label>
             </div>
-            <div class="">
-                <input type="radio" name="btnOpcion" value="0">
-                <label for="i">Ingles</label>
+            <div class="form-group">
+                <label for="i">Ingles <input type="radio" name="btnOpcion" value="0" style="margin-left: 23px;"></label>
             </div>
         </div>
+        <br><br>
         <div class="control-group">
             <div class="controls">
                 <input type="submit" value="Traducir">
@@ -40,7 +40,7 @@
         </div>
         <br>
         <label for="txtResultado">Traducción: </label>
-        <h1 name="txtResultado">{{buscar}}</h1>
+        <h4 name="txtResultado">{{buscar}}</h4>
     </div>
     </form>
 </div>

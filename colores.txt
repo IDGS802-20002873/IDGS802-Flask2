@@ -1,1 +1,1 @@
-{'Red': 'Rojo', 'Blue': 'Azul'}
+{'RED': 'ROJO', 'YELLOW': 'AMARILLO', 'GREEN': 'VERDE'}
