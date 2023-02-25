@@ -5,13 +5,10 @@ from wtforms.fields import EmailField, PasswordField
 from wtforms import validators
 
 class LenguajeForm(Form):
-    
     spanish = StringField('Español',[
-        validators.DataRequired(message= 'El valor es requerido')])
+        validators.DataRequired(message='El valor es requerido')])
     english = StringField('Ingles',[
-        validators.DataRequired(message= 'El valor es requerido'),
-        validators.length(min=15, message='Ingresa un valor maximo')])
+        validators.DataRequired(message='El valor es requerido')])
     search = StringField('Buscar',[
-        validators.DataRequired(message= 'El valor es requerido'),
-        validators.length(min=15, message='Ingresa un valor maximo')])
+        validators.DataRequired(message='El valor es requerido')])
     

@@ -1,1 +1,1 @@
-Matricula:12345Nombre:MarioApellidos:LopezCorreo:alguien@gmail.com
+{'Red': 'Rojo', 'Blue': 'Azul'}
