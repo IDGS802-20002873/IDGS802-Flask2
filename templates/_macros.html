@@ -26,12 +26,3 @@
     </ul>
     {%endif%}
 {%endmacro%}
-
-{% macro render_num(field) %}
-    <div class="control-group">
-        <div class="controls">
-            {{field.label}}
-            {{field(**kwargs)|safe}}
-        </div>
-    </div>
-{%endmacro%}

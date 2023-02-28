@@ -1,5 +1,4 @@
-from flask import Flask,render_template
-from flask import request
+from flask import Flask,render_template, request
 import formsActividad
 
 app=Flask(__name__)
@@ -8,21 +7,20 @@ app=Flask(__name__)
 def Index():
     num_form = formsActividad.UserForm(request.form)
     num = 0
-    if request.method=='POST':
-        num = num_form.numero.data
-        num = int(num)
-    return render_template("indexActividad1.html",form=num_form,num=num)
+    if request.method == "POST" and (num_form.numero.data!=None):
+        num = int(num_form.numero.data)
+    return render_template("indexActividad1.html",form=num_form, num=num)
         
 
 @app.route("/resultado",methods=["POST"])
 def Resultado():
-    num = request.form.get("txtNumero")
-    num = int(num)
-    numMax = 0
-    numMin = 0
-    numMin = int(request.form.get("numero{}".format(1)))
-    numRange = 0
-    cont = 0
+    num=request.form.get('txtCont')
+    num=int(num)
+    numMax=0
+    numMin=0
+    numMin=int(request.form.get("numero{}".format(1)))
+    numRange=0
+    cont=0
     suma = 0
     promedio = 0
     lista = []
@@ -42,7 +40,7 @@ def Resultado():
         if(contador > 1):
             listaCom.append("El número {} aparece {} veces.".format(repetido,contador))
     listaRep = list(set(listaCom))
-    num = len(listaRep)
+    num=len(listaRep)
 
     for i in lista:
         suma += i

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% from 'macros2.html' import render_field %}
+
+<div class="container">
+    <center>
+        <img src="../static/img/resistencias.jpg" alt="ImagenResistencia" height="300px" width="500px">
+    </center>
+</div>
+<div class="col-xs-6">
+   <form action="" method="post" novalidate>
+         {{ form.cscf_token }}
+         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+         {{ render_field(form.b1) }}
+         {{ render_field(form.b2) }}
+         {{ render_field(form.b3) }}
+         {{ render_field(form.tolerancia) }}
+      <input type="submit" value="Calcular">
+   </form>
+</div>
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Banda 1</th>
+            <th>Banda 2</th>
+            <th>Banda 3</th>
+            <th>Banda 4</th>
+            <th>Valor</th>
+            <th>Minimo</th>
+            <th>Maximo</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% from 'macros2.html' import render_inputTable, render_inputTableM, render_inputTableT %}
+            {{render_inputTable(lista)}}
+            {{render_inputTableM(itemM)}}
+            {{render_inputTableT(itemT)}}
+            <td>{{resultadox}}</td>
+            <td>{{resultadoFMin}}</td>
+            <td>{{resultadoFMax}}</td>
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}
